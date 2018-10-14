@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import configureStore from "./store";
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+document.addEventListener("DOMContentLoaded", () => {
+  const preState = sessionStorage.preState ? sessionStorage.getItem('preState') : {};
+  const store = configureStore(preState);
+  
+  ReactDOM.render(<App store={store}/>, document.getElementById("root"));
+});
