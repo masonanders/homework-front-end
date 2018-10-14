@@ -1,0 +1,85 @@
+@import "variables";
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+
+  @media screen and (min-width: $break-mobile) {
+    width: 550px;
+  }
+
+  @media screen and (min-width: $break-tablet) {
+    width: 650px;
+  }
+
+  .Title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+
+    img {
+      height: 30px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    @media screen and (min-width: $break-mobile) {
+      img {
+        height: 70px;
+      }
+
+      h1 {
+        font-size: 70px;
+        font-weight: 500;
+      }
+    }
+
+    @media screen and (min-width: $break-tablet) {
+      img {
+        height: 80px;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .Searchbar {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: 100%;
+
+    input {
+      border: none;
+      border-radius: 5px 0 0 5px;
+      background-color: white;
+      padding: 5px 10px;
+      height: 100%;
+      width: 100%;
+    }
+
+    button {
+      border: none;
+      border-radius: 0 5px 5px 0;
+      background-color: white;
+      height: 100%;
+      width: 30px;
+    }
+
+    @media screen and (min-width: $break-mobile) {
+      height: 40px;
+
+      input {
+        font-size: 18px;
+      }
+    }
+  }
+}
