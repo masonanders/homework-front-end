@@ -2,7 +2,6 @@ import { RECEIVE_GIFS, CLEAR_GIFS } from "../actions/gifs_actions.js";
 
 export default (oldState = [], action) => {
   Object.freeze(oldState);
-  let newState = [];
 
   switch (action.type) {
     case RECEIVE_GIFS:
