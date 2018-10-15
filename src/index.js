@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 import configureStore from "./store";
 
-import axios from 'axios';
+import axios from "axios";
+
+// Development
 import { searchGifs, trendingGifs, clearGifs } from "./actions/gifs_actions";
 
 document.addEventListener("DOMContentLoaded", () => {

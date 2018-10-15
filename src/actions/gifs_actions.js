@@ -12,14 +12,14 @@ const receiveGifs = (data, search) => ({
 export const searchGifs = (search, offset) => dispatch => {
   const searchString = search.split(" ").join("+");
   return fetchSearchGifs(searchString, offset).then(
-    res => dispatch(receiveGifs(res, search)),
+    res => dispatch(receiveGifs(res, search, offset)),
     err => console.error(err)
   );
 };
 
 export const trendingGifs = offset => dispatch =>
   fetchTrendingGifs(offset).then(
-    res => dispatch(receiveGifs(res, null)),
+    res => dispatch(receiveGifs(res, null, offset)),
     err => console.error(err)
   );
 
