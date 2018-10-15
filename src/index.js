@@ -4,15 +4,19 @@ import App from "./components/App";
 import configureStore from "./store";
 
 import axios from 'axios';
-import { searchGifs, trendingGifs } from "./util/gifs_util";
+import { searchGifs, trendingGifs, clearGifs } from "./actions/gifs_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const preState = sessionStorage.preState
     ? sessionStorage.getItem("preState")
     : {};
   const store = configureStore(preState);
+  ReactDOM.render(<App store={store} />, document.getElementById("root"));
+
+  // Development
+  window.store = store;
   window.axios = axios;
   window.searchGifs = searchGifs;
   window.trendingGifs = trendingGifs;
-  ReactDOM.render(<App store={store} />, document.getElementById("root"));
+  window.clearGifs = clearGifs;
 });

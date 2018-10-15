@@ -16,8 +16,8 @@ const generateURL = (type, offset = 0, search = null) => {
   );
 };
 
-export const searchGifs = (searchString, offset = 0) =>
+export const fetchSearchGifs = (searchString, offset = 0) =>
   axios.get(generateURL("search", offset, searchString));
 
-export const trendingGifs = (offset = 0) =>
+export const fetchTrendingGifs = (offset = 0) =>
   axios.get(generateURL("trending", offset));
