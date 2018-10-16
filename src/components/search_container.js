@@ -5,7 +5,8 @@ import { searchGifs, trendingGifs, clearGifs } from "../actions/gifs_actions";
 
 const mapStateToProps = state => ({
   search: state.search,
-  offset: state.offset
+  offset: state.offset,
+  gifs: state.gifs
 });
 
 const mapDispatchToProps = dispatch => ({

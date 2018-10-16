@@ -7,6 +7,7 @@ export default (oldState = null, action) => {
     case RECEIVE_GIFS:
       return action.search;
     case CLEAR_GIFS:
+    console.log('clear')
       return null;
     default:
       return oldState;
