@@ -1,0 +1,35 @@
+@import "variables.scss";
+
+.gifs-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 80px 20px 30px;
+
+  button {
+    height: 40px;
+    width: 300px;
+    font-size: 17px;
+    z-index: 1;
+  }
+}
+
+.gifs-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+
+  img {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 3px;
+  }
+
+  @media screen and (min-width: $break-mobile) {
+  }
+
+  @media screen and (min-width: $break-tablet) {
+  }
+}

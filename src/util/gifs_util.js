@@ -3,7 +3,7 @@ import { giphy_API_key } from "../config/keys";
 
 const gifsHost = "//api.giphy.com";
 const gifsPath = "/v1/gifs/";
-const limit = 10;
+const limit = 15;
 
 const generateURL = (type, offset = 0, search = null) => {
   const typeStr = `${type}?`;

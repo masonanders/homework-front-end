@@ -24,6 +24,14 @@ export const trendingGifs = (offset = 0) => dispatch =>
     err => console.error(err)
   );
 
+export const generateMore = (search, offset) => dispatch => {
+  if (search) {
+    searchGifs(search, offset)(dispatch);
+  } else {
+    trendingGifs(offset)(dispatch);
+  }
+};
+
 export const clearGifs = () => dispatch =>
   new Promise(res => res()).then(() => {
     dispatch({ type: CLEAR_GIFS });
