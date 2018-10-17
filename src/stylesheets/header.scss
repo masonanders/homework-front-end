@@ -81,7 +81,7 @@
     }
 
     @media screen and (min-width: $break-mobile) {
-      height: 40px;
+      height: 50px;
 
       input {
         font-size: 18px;
@@ -102,19 +102,26 @@
 
     @media screen and (min-width: $break-mobile) {
       font-size: 20px;
-      height: 40px;
+      height: 50px;
     }
   }
 }
 
 .float {
   transition: top 1s;
-  top: 10px;
+  position: sticky;
+  top: -30px;
   height: 100%;
+  margin-top: 20px;
+
+  @media screen and (min-width: $break-mobile) {
+    top: -65px;
+  }
 
   .searchbar {
     transition: width 1s;
     width: 75%;
+    z-index: 2;
   }
 
   .see-trending {
@@ -125,18 +132,16 @@
     font-size: 9px;
     font-weight: 700;
     padding: 0;
+    z-index: 2;
 
     @media screen and (min-width: $break-mobile) {
       font-size: 18px;
       font-weight: 500;
-      top: -50px;
+      top: -60px;
     }
   }
 
   .search-container {
-    position: sticky;
-    top: 10px;
     height: 0px;
-    z-index: 2;
   }
 }
