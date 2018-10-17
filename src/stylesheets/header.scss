@@ -7,60 +7,62 @@
   width: 250px;
   position: absolute;
   top: 40%;
-  
+
   @media screen and (min-width: $break-mobile) {
     width: 550px;
   }
-  
+
   @media screen and (min-width: $break-tablet) {
     width: 650px;
   }
-  
+
   .title {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 10px;
-    
+    z-index: 2;
+
     img {
       height: 30px;
     }
-    
+
     h1 {
       font-size: 30px;
       font-weight: 500;
     }
-    
+
     @media screen and (min-width: $break-mobile) {
       img {
         height: 70px;
       }
-      
+
       h1 {
         font-size: 70px;
         font-weight: 500;
       }
     }
-    
+
     @media screen and (min-width: $break-tablet) {
       img {
         height: 80px;
       }
-      
+
       h1 {
         font-size: 80px;
         font-weight: 500;
       }
     }
   }
-  
+
   .searchbar {
     transition: width 1s;
     display: flex;
     flex-direction: row;
     height: 30px;
     width: 100%;
-    
+    margin-bottom: 10px;
+
     input {
       border: none;
       border-radius: 5px 0 0 5px;
@@ -69,7 +71,7 @@
       height: 100%;
       width: 100%;
     }
-    
+
     button {
       border: none;
       border-radius: 0 5px 5px 0;
@@ -77,16 +79,16 @@
       height: 100%;
       width: 30px;
     }
-    
+
     @media screen and (min-width: $break-mobile) {
       height: 40px;
-      
+
       input {
         font-size: 18px;
       }
     }
   }
-  
+
   .see-trending {
     transition: width 1s, left 1s, top 0.5s;
     position: relative;
@@ -95,9 +97,13 @@
     height: 30px;
     width: 100%;
     font-size: 16px;
-    margin-top: 10px;
     overflow: hidden;
     white-space: nowrap;
+
+    @media screen and (min-width: $break-mobile) {
+      font-size: 20px;
+      height: 40px;
+    }
   }
 }
 
@@ -119,6 +125,12 @@
     font-size: 9px;
     font-weight: 700;
     padding: 0;
+
+    @media screen and (min-width: $break-mobile) {
+      font-size: 18px;
+      font-weight: 500;
+      top: -50px;
+    }
   }
 
   .search-container {
