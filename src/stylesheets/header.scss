@@ -118,6 +118,10 @@
     top: -65px;
   }
 
+  @media screen and (min-width: $break-tablet) {
+    top: -75px;
+  }
+
   .searchbar {
     transition: width 1s;
     width: 75%;
