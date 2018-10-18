@@ -1,36 +1,49 @@
 import { fetchSearchGifs, fetchTrendingGifs } from "../util/gifs_util";
 
 export const RECEIVE_GIFS = "RECEIVE_GIFS";
+export const RECEIVE_MORE_GIFS = "RECEIVE_MORE_GIFS";
 export const CLEAR_GIFS = "CLEAR_GIFS";
 export const SET_CURRENT_GIF = "SET_CURRENT_GIF";
 export const CLEAR_CURRENT_GIF = "CLEAR_CURRENT_GIF";
 
-const receiveGifs = (data, search, offset) => ({
+const receiveGifs = (data, search) => ({
   type: RECEIVE_GIFS,
   data,
-  search,
+  search
+});
+
+const receiveMoreGifs = (data, offset) => ({
+  type: RECEIVE_MORE_GIFS,
+  data,
   offset
 });
 
-export const searchGifs = (search, offset = 0) => dispatch => {
+export const searchGifs = search => dispatch => {
   const searchString = search.split(" ").join("+");
-  return fetchSearchGifs(searchString, offset).then(
-    res => dispatch(receiveGifs(res, search, offset)),
+  return fetchSearchGifs(searchString).then(
+    res => dispatch(receiveGifs(res, search)),
     err => console.error(err)
   );
 };
 
-export const trendingGifs = (offset = 0) => dispatch =>
-  fetchTrendingGifs(offset).then(
-    res => dispatch(receiveGifs(res, null, offset)),
+export const trendingGifs = () => dispatch =>
+  fetchTrendingGifs().then(
+    res => dispatch(receiveGifs(res, "")),
     err => console.error(err)
   );
 
 export const generateMore = (search, offset) => dispatch => {
   if (search) {
-    searchGifs(search, offset)(dispatch);
+    const searchString = search.split(" ").join("+");
+    return fetchSearchGifs(searchString, offset).then(
+      res => dispatch(receiveMoreGifs(res, offset)),
+      err => console.error(err)
+    );
   } else {
-    trendingGifs(offset)(dispatch);
+    fetchTrendingGifs(offset).then(
+      res => dispatch(receiveMoreGifs(res, offset)),
+      err => console.error(err)
+    );
   }
 };
 
