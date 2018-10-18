@@ -1,6 +1,7 @@
 import React from "react";
 import { randomColor } from "../util/components_util";
 import "../stylesheets/gif_show.scss";
+import gif_show_container from "./gif_show_container";
 
 export default props => {
   const open = props.gif ? " open" : "";
@@ -19,7 +20,7 @@ export default props => {
     .split(" ")
     .slice(0, titleCutIdx)
     .join(" ");
-  const gifImage = gif.images.fixed_width;
+  const gifImage = window.innerWidth < 500 ? gif.images.fixed_width : gif.images.original;
   console.log(gif.images);
 
   const handleClose = e => {
