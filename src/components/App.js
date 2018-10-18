@@ -4,6 +4,7 @@ import "../stylesheets/base.scss";
 
 import Searchbar from "./search_container";
 import GifsList from "./gifs_container";
+import GifShow from "./gif_show_container";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <Searchbar store={this.props.store} />
         <GifsList store={this.props.store}/>
+        <GifShow store={this.props.store} />
       </div>
     );
   }

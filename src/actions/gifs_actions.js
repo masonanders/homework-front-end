@@ -43,4 +43,4 @@ export const setCurrentGif = idx => dispatch =>
   );
 
 export const clearCurrentGif = () => dispatch =>
-  new Promise(res => res()).then(() => dispatch({ tpye: CLEAR_CURRENT_GIF }));
+  new Promise(res => res()).then(() => dispatch({ type: CLEAR_CURRENT_GIF }));
