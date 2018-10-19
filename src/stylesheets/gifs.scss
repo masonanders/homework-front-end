@@ -6,13 +6,13 @@
   justify-content: space-between;
   align-items: center;
   margin: 30px 20px 30px;
-  
+
   button {
     height: 40px;
     width: 300px;
     font-size: 17px;
   }
-  
+
   @media screen and (min-width: $break-mobile) {
     margin: 0px 20px 30px;
 

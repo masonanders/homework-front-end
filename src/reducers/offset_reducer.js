@@ -1,4 +1,8 @@
-import { RECEIVE_GIFS, RECEIVE_MORE_GIFS, CLEAR_GIFS } from "../actions/gifs_actions";
+import {
+  RECEIVE_GIFS,
+  RECEIVE_MORE_GIFS,
+  CLEAR_GIFS
+} from "../actions/gifs_actions";
 
 export default (oldState = 0, action) => {
   Object.freeze(oldState);

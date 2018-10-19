@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import GifsList from "./gifslist";
+import GifsList from "./gifs_list";
 import { generateMore, setCurrentGif } from "../actions/gifs_actions";
 
 const mapStateToProps = state => ({

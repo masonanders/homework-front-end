@@ -15,9 +15,9 @@
   .gif-modal {
     border: 1px solid rgb(50, 50, 50);
     border-radius: 5px;
-    width: 70%;
     height: auto;
-    min-height: 200px;
+    min-height: 250px;
+    min-width: 200px;
     transition: opacity 1s;
     opacity: 0;
     background-color: black;
@@ -31,7 +31,7 @@
     }
 
     @media screen and (min-width: $break-tablet) {
-      width: 50%;
+      min-width: 400px;
     }
 
     img {
@@ -39,26 +39,45 @@
       max-width: 90%;
       height: auto;
       width: auto;
-      margin-bottom: 15px;
+      margin: 15px;
+      object-fit: cover;
     }
 
     h1 {
+      max-width: 200px;
       text-align: center;
-      padding: 10px;
-      margin: 10px;
+      padding: 5px;
       font-size: 20px;
+      font-weight: 300;
       cursor: pointer;
+
+      @media screen and (min-width: $break-mobile) {
+        max-width: 350px;
+        font-size: 30px;
+      }
     }
-    
+
     p {
-      margin-bottom: 5px;
+      font-size: 15px;
+      font-weight: 200;
+      margin: 5px;
+      font-style: italic;
+
+      @media screen and (min-width: $break-mobile) {
+        font-size: 20px;
+      }
     }
-    
+
     h2 {
       cursor: pointer;
       font-size: 18px;
+      font-weight: 200;
       padding: 5px;
-      margin-bottom: 10px;
+      font-style: italic;
+
+      @media screen and (min-width: $break-mobile) {
+        font-size: 23px;
+      }
     }
   }
 }

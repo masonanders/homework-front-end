@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Searchbar store={this.props.store} />
-        <GifsList store={this.props.store}/>
+        <GifsList store={this.props.store} />
         <GifShow store={this.props.store} />
       </div>
     );

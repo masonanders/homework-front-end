@@ -1,7 +1,6 @@
 import React from "react";
 import { randomColor } from "../util/components_util";
 import "../stylesheets/gif_show.scss";
-import gif_show_container from "./gif_show_container";
 
 export default props => {
   const open = props.gif ? " open" : "";
@@ -20,8 +19,8 @@ export default props => {
     .split(" ")
     .slice(0, titleCutIdx)
     .join(" ");
-  const gifImage = window.innerWidth < 500 ? gif.images.fixed_width : gif.images.original;
-  console.log(gif.images);
+  const gifImage =
+    window.innerWidth < 500 ? gif.images.fixed_width : gif.images.original;
 
   const handleClose = e => {
     if (e.target.className === "show-background open") {
@@ -29,12 +28,9 @@ export default props => {
     }
   };
 
-  console.log(gif);
-
   return (
     <div className={"show-background" + open} onClick={e => handleClose(e)}>
       <div className="gif-modal">
-        <h1 onClick={() => window.open(gif.url)}>{title}</h1>
         <img
           src={gifImage.url}
           alt={gif.title}
@@ -44,6 +40,7 @@ export default props => {
             backgroundColor: randomColor()
           }}
         />
+        <h1 onClick={() => window.open(gif.url)}>{title}</h1>
         {gif.username ? <p>by</p> : null}
         {gif.username ? (
           <h2 onClick={() => window.open(gif.user.profile_url)}>
