@@ -25,12 +25,12 @@ class Search extends React.Component {
 
   handleSearch() {
     const search = this.state.value;
-    if (this.state.value)
-      this.props.clearGifs().then(() => this.props.searchGifs(search));
+    if (this.state.value) this.props.searchGifs(search);
   }
 
   handleTrending() {
-    this.props.clearGifs().then(() => this.props.trendingGifs());
+    this.setState({ value: "" });
+    this.props.trendingGifs();
   }
 
   handleKeyPress(e) {
@@ -46,7 +46,7 @@ class Search extends React.Component {
     return (
       <div className={"header" + floatClass}>
         <Header />
-        <div className="search-container" >
+        <div className="search-container">
           <div className="searchbar">
             <input
               onChange={e => this.handleInputValue(e)}

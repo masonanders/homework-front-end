@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchGifs: (search, offset) => dispatch(searchGifs(search, offset)),
-  trendingGifs: offset => dispatch(trendingGifs(offset)),
+  searchGifs: search => dispatch(searchGifs(search)),
+  trendingGifs: () => dispatch(trendingGifs()),
   clearGifs: () => dispatch(clearGifs())
 });
 
