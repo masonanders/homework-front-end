@@ -1,10 +1,11 @@
 import React from "react";
 import "../stylesheets/header.scss";
+import logo from "../giphy_logo.png";
 
 const Header = () => (
   <div className="title">
     <img
-      src="https://36711.apps.zdusercontent.com/36711/assets/1506469900-fd7a54462c6615af92812b8a1a25884b/logo.png"
+      src={logo}
       alt="Giphy Logo"
     />
     <h1>GIPHY Search</h1>
